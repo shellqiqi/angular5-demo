@@ -1,3 +1,4 @@
-<p>
-  stars works!
-</p>
+<div>
+  <i *ngFor="let star of stars" class="fa-star" [class.fas]="!star" [class.far]="star"></i>
+  {{rating}}星
+</div>

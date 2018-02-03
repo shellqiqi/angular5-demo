@@ -1,16 +1,16 @@
 <div class="card-group">
   <div *ngFor="let product of products" class="col-lg-4 col-md-4 col-sm-4">
     <div class="card">
-      <img class="card-img-top" src="http://placehold.it/320x150">
+      <img class="card-img-top" [src]="imgUrl">
       <div class="card-body">
         <div class="card-title">
           <h5 class="float-right">{{product.price}}元</h5>
           <h5><a href="#">{{product.title}}</a></h5>
         </div>
         <p class="card-text">{{product.desc}}</p>
-      </div>
-      <div>
-        <app-stars></app-stars>
+        <div>
+          <app-stars [rating]="product.rating"></app-stars>
+        </div>
       </div>
     </div>
   </div>
