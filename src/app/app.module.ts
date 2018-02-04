@@ -13,6 +13,8 @@ import { ProductDetailComponent } from './component/product-detail/product-detai
 import { HomeComponent } from './component/home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 import {ProductService} from './service/product/product.service';
+import {ReactiveFormsModule} from '@angular/forms';
+import { FilterPipe } from './pipe/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -24,10 +26,12 @@ import {ProductService} from './service/product/product.service';
     ProductComponent,
     StarsComponent,
     ProductDetailComponent,
-    HomeComponent
+    HomeComponent,
+    FilterPipe
   ],
   imports: [
     AppRoutingModule,
+    ReactiveFormsModule,
     BrowserModule
   ],
   providers: [ProductService],
