@@ -3,15 +3,16 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { FooterComponent } from './footer/footer.component';
-import { SearchComponent } from './search/search.component';
-import { CarouselComponent } from './carousel/carousel.component';
-import { ProductComponent } from './product/product.component';
-import { StarsComponent } from './stars/stars.component';
-import { ProductDetailComponent } from './product-detail/product-detail.component';
-import { HomeComponent } from './home/home.component';
+import { NavbarComponent } from './component/navbar/navbar.component';
+import { FooterComponent } from './component/footer/footer.component';
+import { SearchComponent } from './component/search/search.component';
+import { CarouselComponent } from './component/carousel/carousel.component';
+import { ProductComponent } from './component/product/product.component';
+import { StarsComponent } from './component/stars/stars.component';
+import { ProductDetailComponent } from './component/product-detail/product-detail.component';
+import { HomeComponent } from './component/home/home.component';
 import { AppRoutingModule } from './app-routing.module';
+import {ProductService} from './service/product/product.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { AppRoutingModule } from './app-routing.module';
     AppRoutingModule,
     BrowserModule
   ],
-  providers: [],
+  providers: [ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
