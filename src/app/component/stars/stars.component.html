@@ -1,4 +1,4 @@
 <div>
-  <i *ngFor="let star of stars" class="fa-star" [class.fas]="!star" [class.far]="star"></i>
-  {{rating}}星
+  <i *ngFor="let star of stars; let i = index;" class="fa-star" [class.fas]="!star" [class.far]="star" (click)="clickStar($event, i)"></i>
+  {{rating|number:"1.0-1"}}星
 </div>
