@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Product } from '../../domain/product';
+import { Comment } from '../../domain/comment';
 
 @Injectable()
 export class ProductService {
@@ -32,26 +34,4 @@ export class ProductService {
   getCommentForProductId(id: number): Comment[] {
     return this.comments.filter((comment: Comment): boolean => comment.productId === id);
   }
-}
-
-export class Product {
-  constructor(
-    public id: number,
-    public title: string,
-    public price: number,
-    public rating: number,
-    public desc: string,
-    public categories: Array<string>
-  ) {}
-}
-
-export class Comment {
-  constructor(
-    public id: number,
-    public productId: number,
-    public timeStamp: string,
-    public user: string,
-    public rating: number,
-    public content: string
-  ) {}
 }

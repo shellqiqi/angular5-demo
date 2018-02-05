@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {Product, ProductService} from '../../service/product/product.service';
-import {FormControl} from '@angular/forms';
-import 'rxjs/Rx';
+import { ProductService} from '../../service/product/product.service';
+import { FormControl } from '@angular/forms';
+import 'rxjs/add/operator/debounceTime';
+import { Product } from '../../domain/product';
 
 @Component({
   selector: 'app-product',
