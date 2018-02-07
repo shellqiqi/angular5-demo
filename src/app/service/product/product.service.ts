@@ -31,6 +31,10 @@ export class ProductService {
     return this.products.find((product: Product): boolean => product.id === id);
   }
 
+  getAllCategories(): string[] {
+    return ['类别1', '类别2', '类别3', '类别4', '类别5', '类别6', '类别7'];
+  }
+
   getCommentForProductId(id: number): Comment[] {
     return this.comments.filter((comment: Comment): boolean => comment.productId === id);
   }
