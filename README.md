@@ -1,6 +1,6 @@
 # angular5-demo
 
-简要介绍开发流程
+简要介绍开发流程，配套后端在[angular5-demo-nodejs-backend](https://github.com/shellqiqi/angular5-demo-nodejs-backend/tree/master)
 
 ## 环境配置
 
