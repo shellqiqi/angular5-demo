@@ -15,6 +15,9 @@ import { AppRoutingModule } from './app-routing.module';
 import {ProductService} from './service/product/product.service';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { FilterPipe } from './pipe/filter/filter.pipe';
+import {HttpClientModule} from '@angular/common/http';
+import {WebSocketService} from './service/web-socket/web-socket.service';
+import {HashLocationStrategy, LocationStrategy} from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -33,9 +36,11 @@ import { FilterPipe } from './pipe/filter/filter.pipe';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     BrowserModule
   ],
-  providers: [ProductService],
+  providers: [ProductService, WebSocketService,
+    {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

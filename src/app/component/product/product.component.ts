@@ -12,18 +12,23 @@ import { Product } from '../../domain/product';
 export class ProductComponent implements OnInit {
 
   products: Product[];
-  keyword: string;
-  titleFilter: FormControl = new FormControl();
+  // keyword: string;
+  // titleFilter: FormControl = new FormControl();
   imgUrl = 'http://placehold.it/320x150';
 
   constructor(private productService: ProductService) {
-    this.titleFilter.valueChanges
-      .debounceTime(300)
-      .subscribe(value => this.keyword = value);
+    // this.titleFilter.valueChanges
+    //   .debounceTime(300)
+    //   .subscribe(value => this.keyword = value);
   }
 
   ngOnInit() {
-    this.products = this.productService.getProducts();
+    this.productService.getProducts().subscribe(p => this.products = p);
+    this.productService.searchEvent.subscribe(
+      params => this.productService.search(params).subscribe(
+        p => this.products = p
+      )
+    );
   }
 }
 
