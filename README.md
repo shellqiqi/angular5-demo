@@ -10,7 +10,7 @@
 $ sudo npm install -g @angular/cil
 ```
 
-## 项目初始化
+## 项目流程
 
 ### 新建项目
 
@@ -35,7 +35,7 @@ $ npm install @types/bootstrap --save-dev
 
 ```json
 {
-  "apps": [{
+  "apps": [{ // ...
     "styles": [
       "styles.css",
       "../node_modules/bootstrap/dist/css/bootstrap.css" // add here
@@ -43,9 +43,33 @@ $ npm install @types/bootstrap --save-dev
     "scripts": [
       "../node_modules/jquery/dist/jquery.js", // add here
       "../node_modules/bootstrap/dist/js/bootstrap.js" // add here
-    ],
+    ], // ...
   }]
 }
+```
+
+### 路由
+
+由于使用了Angular的路由模块，浏览器请求的URL并不一定是合法的，需要更改地址策略
+
+```json
+@NgModule({ // ...,
+  providers: [ // ...
+    { provide: LocationStrategy, useClass: HashLocationStrategy }
+  ] // ...
+})
+```
+
+### 开发环境与生产环境
+
+```
+$ ng serve --target=?
+```
+
+### 项目发布
+
+```
+$ ng build -prod
 ```
 
 ## 版本过渡的问题
