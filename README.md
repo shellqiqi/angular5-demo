@@ -33,7 +33,7 @@ $ npm install @types/bootstrap --save-dev
 
 添加到`.angular-cli.json`
 
-```json
+```js
 {
   "apps": [{ // ...
     "styles": [
@@ -52,7 +52,7 @@ $ npm install @types/bootstrap --save-dev
 
 由于使用了Angular的路由模块，浏览器请求的URL并不一定是合法的，需要更改地址策略
 
-```json
+```js
 @NgModule({ // ...,
   providers: [ // ...
     { provide: LocationStrategy, useClass: HashLocationStrategy }
